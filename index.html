@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn 2025</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #242424;
+            --text-primary: #e4e4e4;
+            --text-secondary: #a0a0a0;
+            --accent-blue: #0a66c2;
+            --accent-hover: #0d7fe6;
+            --border-color: #404040;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .navbar {
+            background: var(--bg-secondary);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            background: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 280px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            width: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 300px 2fr 300px;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .profile-section {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-stats {
+            padding: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .groups-section {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+
+        .group-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .post-creator {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-input-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .feed-post {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-content img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .recommendations {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .follow-suggestion {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .follow-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-blue);
+            border-radius: 1.5rem;
+            color: var(--accent-blue);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .notification-badge {
+            background: #ff4040;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <img src="images/linkedin.png" alt="LinkedIn" width="50" height="50" style="filter: brightness(0) invert(1);">
+          <div class="search-box">
+                <i data-feather="search"></i>
+                <input type="text" placeholder="Search">
+          </div>
+      </div>
+        
+        <div style="display: flex; gap: 2rem;">
+            <a href="#" style="color: var(--text-primary); text-decoration: none; position: relative;">
+                <i data-feather="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" style="color: var(--text-secondary); text-decoration: none;">
+                <i data-feather="users"></i>
+                <span>My Network</span>
+            </a>
+            <a href="#" style="color: var(--text-secondary); text-decoration: none;">
+                <i data-feather="briefcase"></i>
+                <span>Jobs</span>
+            </a>
+            <a href="#" style="color: var(--text-secondary); text-decoration: none;">
+                <i data-feather="message-square"></i>
+                <span>Messaging</span>
+            </a>
+            <a href="#" style="color: var(--text-secondary); text-decoration: none; position: relative;">
+                <i data-feather="bell"></i>
+                <span>Notifications</span>
+                <span class="notification-badge">2</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="left-sidebar">
+            <div class="profile-section">
+                <img src="images/Software-Design.jpg" alt="Cover" width="900" height="500" style="width: 100%; height: 60px; object-fit: cover;">
+                <div class="profile-header">
+                    <img src="images/Profile.jpg" alt="NGABIMANA Issa" width="80" height="80" style="width: 80px; height: 80px; border-radius: 50%; margin-top: -40px;">
+                    <h3>NGABIMANA Issa</h3>
+                    <p style="color: var(--text-secondary)">Positive-driven software developer | Problem solver | JS lover with React.js</p>
+              </div>
+                <div class="profile-stats">
+                    <p>Who's viewed your profile <span>62</span></p>
+                    <p>Impressions of your post <span>340</span></p>
+                </div>
+          </div>
+
+            <div class="groups-section">
+                <h4 style="margin-bottom: 1rem;">K Hills Team</h4>
+                <div style="color: var(--text-secondary)">
+                    <p>Recent visitors <span>2</span></p>
+                    <p>Page visitors <span>2</span></p>
+                </div>
+                <a href="#" class="group-item">
+                    <i data-feather="users"></i>
+                    <span>K Hills Team</span>
+                </a>
+            </div>
+        </div>
+
+        <main>
+            <div class="post-creator">
+                <div class="post-input-container">
+                    <img src="images/Profile.jpg" alt="Profile" width="80" height="80" style="width: 40px; height: 40px; border-radius: 50%;">
+                    <input type="text" placeholder="Start a post" style="width: 100%; padding: 0.8rem; background: var(--bg-primary); border: none; border-radius: 8px; color: var(--text-primary);">
+              </div>
+                <div class="post-actions">
+                    <button class="action-btn">
+                        <i data-feather="image"></i>
+                        Photo
+                    </button>
+                    <button class="action-btn">
+                        <i data-feather="video"></i>
+                        Video
+                    </button>
+                    <button class="action-btn">
+                        <i data-feather="calendar"></i>
+                        Job
+                    </button>
+                    <button class="action-btn">
+                        <i data-feather="edit"></i>
+                        Write article
+                    </button>
+                </div>
+            </div>
+
+            <div class="feed-post">
+                <div class="post-author">
+                    <img src="images/Profile.jpg" alt="Yussouf Ntwali" width="80" height="80" style="width: 50px; height: 50px; border-radius: 50%;">
+                    <div>
+                        <h4>Yussouf Ntwali . Following</h4>
+                        <p style="color: var(--text-secondary)">Last week, I had the pleasure to represent R&D at the 2023 Forbes 30 under 30 Africa Summit in Gaborone, Botswana...</p>
+                    </div>
+              </div>
+                <div class="post-content">
+                    <img src="images/Software-Design.jpg" alt="Forbes event" width="900" height="500">                </div>
+            </div>
+        </main>
+
+        <div class="right-sidebar">
+            <div class="recommendations">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3>Add to your feed</h3>
+                    <i data-feather="info"></i>
+                </div>
+                
+                <div class="follow-suggestion">
+                    <div style="display: flex; gap: 1rem;">
+                      <img src="images/Profile.jpg" alt="AEM Community" width="80" height="80" style="width: 40px; height: 40px; border-radius: 50%;">
+                      <div>
+                            <h4>AEM Community</h4>
+                            <p style="color: var(--text-secondary)">Information Technology and Services</p>
+                      </div>
+                  </div>
+                    <button class="follow-btn">+ Follow</button>
+                </div>
+
+                <div class="follow-suggestion">
+                    <div style="display: flex; gap: 1rem;">
+                        <img src="images/Profile.jpg" alt="Alain Nkonko Kamanda" width="80" height="80" style="width: 40px; height: 40px; border-radius: 50%;">
+						
+                        <div>
+                            <h4>Alain Nkonko Kamanda</h4>
+                            <p style="color: var(--text-secondary)">Technical Engineer at +Ex Experts</p>
+                        </div>
+                  </div>
+                    <button class="follow-btn">+ Follow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
